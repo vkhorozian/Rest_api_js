@@ -1,9 +1,15 @@
 const express = require('express'); // this imports the express module
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv/config');
 
 //Middlewares
+app.use(cors());
+app.use(bodyParser.json());
+
+
 /*
 app.use('/posts', () => {
    console.log('this is a middleware running');
